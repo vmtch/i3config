@@ -214,7 +214,7 @@ bindsym $mod+a mode "move window"
 bindsym $mod2+a mode "move window"
 
 # Sleep
-bindsym $mod+Shift+BackSpace exec systemctl suspend
+bindsym $mod+Shift+BackSpace exec i3lock -c 000000
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -236,12 +236,8 @@ bar {
 # Keyring Settings
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
-# Display Position & Rotation Settings
-exec --no-startup-id xrandr --output VGA-0 --mode 1920x1200 --pos 0x0 --rotate left
-exec --no-startup-id xrandr --output DVI-D-0 --mode 1920x1200 --pos 1200x0 --rotate left
-exec --no-startup-id xrandr --output HDMI-1-1 --mode 1920x1200 --pos 2400x0 --rotate left
-exec --no-startup-id xrandr --output DVI-D-1 --primary --mode 1920x1200 --pos 3600x0 --rotate left
-exec --no-startup-id xrandr --output HDMI-1-2 --mode 1920x1200 --pos 4800x0 --rotate left
-
 workspace 1 output VGA-0
+workspace 2 output DVI-D-0
 workspace 3 output HDMI-1-1
+workspace 4 output DVI-D-1
+workspace 5 output HDMI-1-2
