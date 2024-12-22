@@ -26,4 +26,6 @@
 #
 #xrandr --output HDMI-1-1 --primary
 
-xrandr --output VGA-0 --pos 0x0 --mode 1920x1200 --rotate left --output DVI-D-0 --mode 1920x1200 --rotate left --right-of VGA-0 --output HDMI-1-1 --mode 1920x1200 --rotate left --right-of DVI-D-0 --output DVI-D-1 --mode 1920x1200 --rotate left --right-of HDMI-1-1 --output HDMI-1-2 --mode 1920x1200 --rotate left --right-of DVI-D-1
+# HDMI1, HDMI2, VGA-1-1, DVI-D-1-1, DVI-D-1-2
+
+xrandr --output VGA-1-1 --pos 0x0 --mode 1920x1200 --rotate left --output DVI-D-1-1 --mode 1920x1200 --rotate left --right-of VGA-1-1 --output HDMI1 --mode 1920x1200 --rotate left --right-of DVI-D-1-1 --output DVI-D-1-2 --mode 1920x1200 --rotate left --right-of HDMI1 --output HDMI2 --mode 1920x1200 --rotate left --right-of DVI-D-1-2
