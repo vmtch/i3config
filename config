@@ -52,7 +52,7 @@ client.background       #FF3333
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -68,9 +68,15 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
+workspace 1 output VGA-1-1
+workspace 2 output DVI-D-1-1
+workspace 3 output HDMI1
+workspace 4 output DVI-D-1-2
+workspace 5 output HDMI2
+
 # start a terminal
-bindsym $mod+Return exec alacritty
-bindsym $mod2+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod2+Return exec --no-startup-id alacritty
 #bindsym $mod+Return exec xfce4-terminal
 #bindsym $mod2+Return exec xfce4-terminal
 
@@ -136,7 +142,7 @@ bindsym $mod2+Ctrl+l swap container to
 bindsym $mod+shift+' split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Down split v
 #bindsym $mod+shift+5 split v
 
 # enter fullscreen mode for the focused container
@@ -187,8 +193,6 @@ bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -269,10 +273,10 @@ exec_always --no-startup-id ~/.config/polybar/launch
 
 # Background
 #exec_always feh -s --randomize --slideshow-delay 1 --output-ouly HDMI1 --bg-scale ~/Pictures/wallpaper/ &
-exec_always ~/.config/i3/slideshow.sh
+exec_always --no-startup-id ~/.config/i3/slideshow.sh
 
 # Window Compositor
-exec_always picom -f
+exec_always --no-startup-id picom -f
 
 # Keyring Settings
 #exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
@@ -287,9 +291,3 @@ exec_always --no-startup-id fcitx5 -d
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
 exec --no-startup-id xset s noblank
-
-workspace 1 output VGA-1-1
-workspace 2 output DVI-D-1-1
-workspace 3 output HDMI1
-workspace 4 output DVI-D-1-2
-workspace 5 output HDMI2
