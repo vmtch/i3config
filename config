@@ -82,8 +82,8 @@ bindsym $mod2+Return exec --no-startup-id alacritty
 
 
 # kill focused window
-bindsym $mod+Shift+q kill
-bindsym $mod2+Shift+q kill
+bindsym $mod+Shift+q kill; sleep 0.2; exec --no-startup-id ~/.config/i3/mouse_follow_focus.sh
+bindsym $mod2+Shift+q kill; sleep 0.2; exec --no-startup-id ~/.config/i3/mouse_follow_focus.sh
 bindsym $mod+q kill
 bindsym $mod2+q kill
 
@@ -182,11 +182,11 @@ bindsym $mod+4 workspace number $ws4
 bindsym $mod+5 workspace number $ws5
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+1 move container to workspace number $ws1; [con_id="__focused__"] focus; workspace number $ws1;
+bindsym $mod+Shift+2 move container to workspace number $ws2; [con_id="__focused__"] focus; workspace number $ws2;
+bindsym $mod+Shift+3 move container to workspace number $ws3; [con_id="__focused__"] focus; workspace number $ws3;
+bindsym $mod+Shift+4 move container to workspace number $ws4; [con_id="__focused__"] focus; workspace number $ws4;
+bindsym $mod+Shift+5 move container to workspace number $ws5; [con_id="__focused__"] focus; workspace number $ws5;
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
