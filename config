@@ -75,17 +75,13 @@ workspace 4 output DVI-D-1-2
 workspace 5 output HDMI2
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod2+Return exec --no-startup-id alacritty
-#bindsym $mod+Return exec xfce4-terminal
-#bindsym $mod2+Return exec xfce4-terminal
+bindsym $mod+Return exec --no-startup-id sh -c 'alacritty & sleep 0.1 && ~/.config/i3/mouse_follow_focus.sh'
+bindsym $mod2+Return exec --no-startup-id sh -c 'alacritty & sleep 0.1 && ~/.config/i3/mouse_follow_focus.sh'
 
 
 # kill focused window
-bindsym $mod+Shift+q kill; sleep 0.2; exec --no-startup-id ~/.config/i3/mouse_follow_focus.sh
-bindsym $mod2+Shift+q kill; sleep 0.2; exec --no-startup-id ~/.config/i3/mouse_follow_focus.sh
-bindsym $mod+q kill
-bindsym $mod2+q kill
+bindsym $mod+q kill; exec --no-startup-id sh -c 'sleep 0.05 && ~/.config/i3/mouse_follow_focus.sh'
+bindsym $mod2+q kill; exec --no-startup-id sh -c 'sleep 0.05 && ~/.config/i3/mouse_follow_focus.sh'
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id ~/.config/i3/run_and_focus.sh
