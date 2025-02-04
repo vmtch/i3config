@@ -264,7 +264,7 @@ bindsym $mod+Shift+BackSpace exec ~/.config/i3/lock.sh
 #            urgent_workspace    #2f343a #ffe4e1 #696969 #484e50   #ffe4e1
 #        }
 #}
-exec_always --no-startup-id ~/.config/polybar/launch
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Background
 #exec_always feh -s --randomize --slideshow-delay 1 --output-ouly HDMI1 --bg-scale ~/Pictures/wallpaper/ &
