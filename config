@@ -75,8 +75,8 @@ workspace 4 output DVI-D-1-2
 workspace 5 output HDMI2
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id sh -c 'alacritty & sleep 0.1 && ~/.config/i3/mouse_follow_focus.sh'
-bindsym $mod2+Return exec --no-startup-id sh -c 'alacritty & sleep 0.1 && ~/.config/i3/mouse_follow_focus.sh'
+bindsym $mod+Return exec --no-startup-id sh -c 'alacritty & sleep 0.2 && ~/.config/i3/mouse_follow_focus.sh'
+bindsym $mod2+Return exec --no-startup-id sh -c 'alacritty & sleep 0.2 && ~/.config/i3/mouse_follow_focus.sh'
 
 
 # kill focused window
@@ -267,7 +267,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id ~/.config/i3/slideshow.sh
 
 # Window Compositor
-exec_always --no-startup-id picom -f
+exec_always --no-startup-id picom --backend xrender -f
 
 # Keyring Settings
 #exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
